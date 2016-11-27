@@ -8,7 +8,7 @@
 ;; (key-chord-define-global "yy" 'browse-kill-ring)
 
 ;; Adding
-;;;(key-chord-define-global "JK"  'ace-jump-buffer)
+;;;;(key-chord-define-global "JK"  'ace-jump-buffer)
 
 ;; 
 ;; revert to traditional C-x u
