@@ -33,13 +33,25 @@
 (defun flow_init (s)
   "Initialize flow"
   (interactive "sRoot directory: ")
-  (setq flow_root_dir s)
-  (shell-command (format "%s start %s" flow_binary s))
+  (if flow_root_dir
+      ""
+    (setq flow_root_dir s)
+    (shell-command (format "%s start %s" flow_binary s))
+     )
   (compile (format "%s status --from emacs; exit 0" flow_binary))
 )
 
 ;;(setq compilation-scroll-output t)
-(global-set-key "\C-c\C-c" 'flow_init)
+(global-set-key (kbd "C-c C-f") 'flow_init)
+
+(defun flow_run ()
+  "Run flow"
+  (interactive)
+ (compile (format "%s status --from emacs; exit 0" flow_binary))
+)
+
+;;(setq compilation-scroll-output t)
+(global-set-key (kbd "C-x C-m") 'flow_run)
 
 (defun show-type ()
   "show type"
@@ -59,7 +71,7 @@
     (switch-to-buffer-other-window buffer))
 )
 
-(global-set-key (kbd "M-t") 'show-type)
+(global-set-key (kbd "C-M-t") 'show-type)
 
 (defun fill-types ()
   "fill types"
@@ -78,7 +90,7 @@
   ;;(revert-buffer)
 )
 
-(global-set-key (kbd "C-t") 'fill-types)
+(global-set-key (kbd "C-c C-c t") 'fill-types)
 
 (defun jump-def ()
   "jump to definition"
@@ -98,7 +110,7 @@
   ;;(switch-to-buffer-other-window buffer)
 )
 
-(global-set-key "\C-x\C-l" 'jump-def)
+(global-set-key (kbd "C-M-.") 'jump-def)
 
 (defun auto-complete ()
   "autocomplete"
@@ -119,7 +131,7 @@
     (switch-to-buffer-other-window buffer))
 )
 
-(global-set-key (kbd "C-l") 'auto-complete)
+(global-set-key (kbd "M-SPC") 'auto-complete)
 
 (add-hook 'kill-emacs-hook
   (lambda ()
