@@ -29,13 +29,17 @@ With ARG, put point on line ARG. Negative counts from bottom."
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.scpt\\'" . web-mode))
+
+(add-hook 'web-mode-hook 'prettier-js-mode)
+;; see bin/prettier-emacs
 
 (setq web-mode-content-types-alist
-      '(("jsx" . "/jsx/*\\.js\\'")
-        ("jsx" . "/components/.*\\.js[x]?\\'")
-        ("jsx" . "*\\.jsx\\'")
+      '(("jsx" . "\\.js[x]?\\'")
+;;        ("javascript" . "\\.scpt\\'")
         ))
-
+ 
+(subword-mode +1)
 
 ;; really tired of projectile-mode interpreting the TAB key
 ;; as a TAGS search. And it's not even documented by C-h k
