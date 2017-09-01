@@ -9,7 +9,7 @@
 
 ;; Adding
 ;;;;(key-chord-define-global "JK"  'ace-jump-buffer)
-
+(key-chord-mode -1)
 ;; 
 ;; revert to traditional C-x u
 (define-key undo-tree-map (kbd "\C-x u") nil)
