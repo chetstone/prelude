@@ -28,7 +28,6 @@
      ("tex" . "*.tex")
      ("texi" . "*.texi")
      ("asm" . "*.[sS]"))))
- '(magit-popup-use-prefix-argument (quote disabled))
  '(package-selected-packages
    (quote
     (coffee-mode helm-projectile helm beacon datetime seq zop-to-char prettier-js csv-mode wgrep iedit editorconfig log4j-mode logview json-mode magit swift-mode zenburn-theme yaml-mode web-mode volatile-highlights vkill undo-tree smartrep smartparens scss-mode rainbow-mode projectile ov operate-on-number move-text markdown-mode magit-find-file key-chord js2-mode haml-mode guru-mode groovy-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region exec-path-from-shell elisp-slime-nav easy-kill discover-my-major diminish diff-hl browse-kill-ring anzu ack-and-a-half ace-window ace-jump-buffer)))
